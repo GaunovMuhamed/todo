@@ -1,0 +1,77 @@
+.background {
+  background: linear-gradient(50deg, #ffd89b, #19547b);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+}
+
+.main-container {
+  /*background-color: tomato;*/
+  margin: 0 auto;
+  width: 40%;
+  position: relative;
+}
+
+.main-text {
+  text-align: center;
+  font-size: 40px;
+  color: #F5CBEDcc;
+}
+
+.add-todo-form,
+.search-todo-form {
+  background-color: #ffffff;
+  margin: 20px auto;
+  display: flex;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 5px;
+}
+
+.input-area {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.input-image {
+  background-color: #ffffff;
+  background-image: url("/images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 24px;
+}
+
+.input-field {
+  border: none;
+  width: 100%;
+  text-indent: 6px;
+  outline: none;
+}
+
+.input-field::placeholder {
+  font-style: oblique;
+}
+
+.new-todo {
+  background-color: wheat;
+  display: flex;
+  border: solid 0.5px;
+}
+
+.todo-circle {
+  background: #f35429;
+  cursor: pointer;
+}
+
+.todo-text {
+  width: 100%;
+}
+
+.delete-button {
+  background-image: url("/images/cross.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 22px;
+}
