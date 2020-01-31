@@ -33,13 +33,14 @@
   width: 80%;
 }
 
-.input-image {
+.input-button {
   background-color: #ffffff;
   background-image: url("/images/arrow.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  width: 24px;
+  width: 30px;
+  transform: rotate(180deg);
 }
 
 .input-field {
@@ -54,18 +55,32 @@
 }
 
 .new-todo {
-  background-color: wheat;
+  background-color: #ffffff;
   display: flex;
   border: solid 0.5px;
 }
 
-.todo-circle {
-  background: #f35429;
-  cursor: pointer;
+.hide-todo {
+  display: none;
 }
 
-.todo-text {
+.todo-checkbox {
+  background-image: url("/images/circle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 22px;
+}
+
+.todo-text,
+.changed-todo-text {
   width: 100%;
+  padding: 8px;
+}
+
+.changed-todo-text {
+  text-decoration: line-through;
+  color: #7E7E7E;
 }
 
 .delete-button {
@@ -74,4 +89,50 @@
   background-position: center;
   background-size: contain;
   width: 22px;
+  padding: 10px;
+}
+
+.todo-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.bottom-menu {
+  background-color: #ffffff;
+}
+
+.bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 6px;
+  color: #7E7E7E;
+}
+
+.all-button,
+.active-button,
+.completed-button {
+  cursor: pointer;
+}
+
+.checkbox {
+  z-index: -9999;
+  position: absolute;
+}
+
+.custom-checkbox {
+  border-radius: 100%;
+  border: solid #000000 0.8px;
+  width: 27px;
+  height: 20px;
+  margin: auto 8px;
+}
+
+.new-todo .checkbox:checked+.custom-checkbox {
+  background-image: url('/images/tick.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
