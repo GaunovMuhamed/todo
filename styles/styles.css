@@ -7,7 +7,6 @@
 }
 
 .main-container {
-  /*background-color: tomato;*/
   margin: 0 auto;
   width: 40%;
   position: relative;
@@ -35,7 +34,7 @@
 
 .input-button {
   background-color: #ffffff;
-  background-image: url("/images/arrow.png");
+  background-image: url("../images/arrow.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -60,15 +59,15 @@
   border: solid 0.5px;
 }
 
+.new-todo:hover .delete-button{
+  background-image: url("../images/cross.png");
+}
+
 .hide-todo {
   display: none;
 }
 
 .todo-checkbox {
-  background-image: url("/images/circle.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   width: 22px;
 }
 
@@ -84,21 +83,25 @@
 }
 
 .delete-button {
-  background-image: url("/images/cross.png");
+  background-image: none;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
-  width: 22px;
-  padding: 10px;
+  background-size: 50%;
+  width: 15px;
+  height: 15px;
+  margin: auto auto;
+  padding:8px
 }
 
 .todo-list {
-  max-height: 200px;
+  max-height: 198px;
   overflow-y: auto;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .bottom-menu {
   background-color: #ffffff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .bottom-buttons {
@@ -115,23 +118,35 @@
 .active-button,
 .completed-button {
   cursor: pointer;
+  padding:5px;
+  font-size: 15px;
+  border: solid transparent 2px;
+}
+
+.all-button:hover,
+.active-button:hover,
+.completed-button:hover {
+  border: solid #ffd89b 2px;
+  border-radius: 4px;
 }
 
 .checkbox {
   z-index: -9999;
   position: absolute;
+  width: 0px;
+  height: 0px;
 }
 
 .custom-checkbox {
   border-radius: 100%;
   border: solid #000000 0.8px;
-  width: 27px;
-  height: 20px;
+  min-width: 26px;
+  min-height: 26px;
   margin: auto 8px;
 }
 
 .new-todo .checkbox:checked+.custom-checkbox {
-  background-image: url('/images/tick.png');
+  background-image: url("../images/tick.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;

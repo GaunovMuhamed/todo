@@ -1,7 +1,6 @@
 const searchForm = document.querySelector(".search-todo-form");
 const inputForm = document.querySelector(".add-todo-form");
 const ulNode = document.querySelector(".todo-list");
-const todoCross = document.querySelector(".todo-cross");
 const bottomButtons = document.querySelector(".bottom-buttons");
 let checkboxesFlag = true;
 
@@ -29,10 +28,7 @@ function bottomButtonPress(event) {
   } else if (event.target.className.includes("completed-button")) { //with tick (check true)
 
     liArray.forEach(item => item.querySelector(".checkbox").checked ? item.classList.remove("hide-todo") : item.classList.add("hide-todo"))
-  } else {
-    console.log('error');
   }
-
 }
 
 function toggleAllTodos(event) {
@@ -92,5 +88,9 @@ function todoRendering(newTodoValue) {
   <h2 class="todo-text">${newTodoValue}</h2>
   <div class="delete-button"></div>
 </li>`;
-  ulNode.innerHTML += htmlPattern;
+
+  //ulNode.innerHTML += htmlPattern; //полностью откатывает чекбоксы
+  const liNode = document.createElement("li");
+  liNode.innerHTML = htmlPattern;
+  ulNode.appendChild(liNode);
 }
