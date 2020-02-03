@@ -14,18 +14,20 @@ inputForm.addEventListener("click", toggleAllTodos); ///checking all todos
 
 bottomButtons.addEventListener("click", bottomButtonPress);
 
-function bottomButtonPress(event) {
+function bottomButtonPress({
+  target
+}) {
   const liArray = Array.from(ulNode.children);
 
-  if (event.target.className.includes("all-button")) {
+  if (target.className.includes("all-button")) {
 
     liArray.forEach(item => item.classList.remove("hide-todo"));
 
-  } else if (event.target.className.includes("active-button")) { //without tick (check false)
+  } else if (target.className.includes("active-button")) { //without tick (check false)
 
     liArray.forEach(item => item.querySelector(".checkbox").checked ? item.classList.add("hide-todo") : item.classList.remove("hide-todo"))
 
-  } else if (event.target.className.includes("completed-button")) { //with tick (check true)
+  } else if (target.className.includes("completed-button")) { //with tick (check true)
 
     liArray.forEach(item => item.querySelector(".checkbox").checked ? item.classList.remove("hide-todo") : item.classList.add("hide-todo"))
   }
@@ -41,7 +43,7 @@ function toggleAllTodos(event) {
 function searchingTodos(event) {
   const searchText = event.target.value;
   const liArray = Array.from(ulNode.children);
-  liArray.forEach(item => item.textContent.includes(searchText) ? item.classList.remove("hide-todo") : item.classList.add("hide-todo"));
+  liArray.forEach(item => item.textContent.toLowerCase().includes(searchText.toLowerCase()) ? item.classList.remove("hide-todo") : item.classList.add("hide-todo"));
 }
 
 function interactTodo(event) {
@@ -74,7 +76,7 @@ function todoCheckToggle(liNode, allFlag) {
 function addTodo(event) {
   event.preventDefault();
 
-  const newTodoValue = inputForm.addInput.value;
+  const newTodoValue = inputForm.addInput.value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
   inputForm.addInput.value = null;
 
   if (newTodoValue.length > 0) {

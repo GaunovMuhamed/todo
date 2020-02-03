@@ -29,6 +29,7 @@
   display: flex;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   padding: 5px;
+  border: solid #F5CBEDcc 0.2px;
 }
 
 .input-area {
@@ -60,11 +61,13 @@
 .new-todo {
   background-color: #ffffff;
   display: flex;
-  border: solid 0.5px;
+  margin-top: 0.2px;
+  border: solid #F5CBEDcc 0.2px;
 }
 
 .new-todo:hover .delete-button {
-  background-image: url("../images/cross.png");
+  opacity: 1;
+  transition: 1s;
 }
 
 .hide-todo {
@@ -87,14 +90,15 @@
 }
 
 .delete-button {
-  background-image: none;
+  background-image: url("../images/cross.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
   width: 15px;
   height: 15px;
   margin: auto auto;
-  padding: 8px
+  padding: 8px;
+  opacity: 0;
 }
 
 .todo-list {
@@ -106,6 +110,8 @@
 .bottom-menu {
   background-color: #ffffff;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border: solid #F5CBEDcc 0.2px;
+  display: flex;
 }
 
 .bottom-buttons {
@@ -120,7 +126,9 @@
 
 .all-button,
 .active-button,
-.completed-button {
+.completed-button,
+.clear-completed,
+.items-count {
   cursor: pointer;
   padding: 5px;
   font-size: 10px;
@@ -144,8 +152,8 @@
 .custom-checkbox {
   border-radius: 100%;
   border: solid #c9c9c9 0.8px;
-  min-width: 26px;
-  min-height: 26px;
+  min-width: 20px;
+  min-height: 20px;
   margin: auto 8px;
 }
 
