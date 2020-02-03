@@ -10,11 +10,12 @@
   margin: 0 auto;
   width: 40%;
   position: relative;
+  padding-top: 10%;
 }
 
 .main-text {
   text-align: center;
-  font-size: 40px;
+  font-size: 70px;
   color: #F5CBEDcc;
 }
 
